@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Sat Dec 14 17:19:56 2024
+| Date         : Sat Dec 14 21:48:02 2024
 | Host         : DESKTOP-DGPTGC1 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file TOP_control_sets_placed.rpt
 | Design       : TOP
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     9 |
-|    Minimum number of control sets                        |     9 |
+| Total control sets                                       |    34 |
+|    Minimum number of control sets                        |    34 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    42 |
+| Unused register locations in slices containing registers |   177 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     9 |
-| >= 0 to < 4        |     4 |
-| >= 4 to < 6        |     0 |
+| Total control sets |    34 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     2 |
 | >= 6 to < 8        |     2 |
-| >= 8 to < 10       |     1 |
-| >= 10 to < 12      |     2 |
+| >= 8 to < 10       |     3 |
+| >= 10 to < 12      |     3 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     0 |
+| >= 16              |    21 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,30 +58,55 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              10 |            6 |
-| No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              34 |           12 |
-| Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |               2 |            2 |
+| No           | No                    | No                     |              20 |           15 |
+| No           | No                    | Yes                    |              24 |            4 |
+| No           | Yes                   | No                     |              43 |           15 |
+| Yes          | No                    | No                     |             672 |          336 |
+| Yes          | No                    | Yes                    |               5 |            2 |
+| Yes          | Yes                   | No                     |             803 |          417 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+----------------------------------------+---------------------------------------+-------------------------------------------+------------------+----------------+--------------+
-|              Clock Signal              |             Enable Signal             |              Set/Reset Signal             | Slice Load Count | Bel Load Count | Bels / Slice |
-+----------------------------------------+---------------------------------------+-------------------------------------------+------------------+----------------+--------------+
-|  main_vga/horizontal/newline_out_reg_0 |                                       |                                           |                1 |              1 |         1.00 |
-|  main_vga/horizontal/newline_out_reg_0 | main_vga/vertical/vsync_out_i_2_n_0   | main_vga/vertical/p_0_in                  |                1 |              1 |         1.00 |
-|  vga_clock/CLK                         | main_vga/horizontal/hsync_out_i_2_n_0 | main_vga/horizontal/hsync_out_i_1_n_0     |                1 |              1 |         1.00 |
-|  clk_IBUF_BUFG                         |                                       |                                           |                2 |              3 |         1.50 |
-|  vga_clock/CLK                         |                                       |                                           |                3 |              6 |         2.00 |
-|  clk_IBUF_BUFG                         |                                       | mic_clock/clk_counter0_n_0                |                2 |              6 |         3.00 |
-|  vga_clock/CLK                         |                                       | main_vga/horizontal/g_reg0                |                3 |              8 |         2.67 |
-|  main_vga/horizontal/newline_out_reg_0 |                                       | main_vga/vertical/clear                   |                3 |             10 |         3.33 |
-|  vga_clock/CLK                         |                                       | main_vga/horizontal/counter[9]_i_1__0_n_0 |                4 |             10 |         2.50 |
-+----------------------------------------+---------------------------------------+-------------------------------------------+------------------+----------------+--------------+
++----------------------------------------+-----------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+|              Clock Signal              |                 Enable Signal                 |                 Set/Reset Signal                | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------------------------+-----------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+|  main_vga/horizontal/newline_out_reg_0 |                                               |                                                 |                1 |              1 |         1.00 |
+|  vga_clk_BUFG                          | main_vga/horizontal/hsync_out_i_2_n_0         | main_vga/horizontal/hsync_out_i_1_n_0           |                1 |              1 |         1.00 |
+|  main_vga/horizontal/newline_out_reg_0 | main_vga/vertical/vsync_out_i_2_n_0           | main_vga/vertical/p_0_in                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                         |                                               |                                                 |                3 |              4 |         1.33 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/new_block                          | reset_IBUF                                      |                2 |              5 |         2.50 |
+|  clk_IBUF_BUFG                         |                                               | mic_clock/clk_counter[0]_i_1__0_n_0             |                2 |              6 |         3.00 |
+|  vga_clk_BUFG                          |                                               |                                                 |                4 |              6 |         1.50 |
+|  vga_clk_BUFG                          |                                               | main_vga/horizontal/g_reg0                      |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                         |                                               | main_clock/clk_counter[0]_i_1__1_n_0            |                3 |              9 |         3.00 |
+|  system_clk_BUFG                       |                                               |                                                 |                7 |              9 |         1.29 |
+|  main_vga/horizontal/newline_out_reg_0 |                                               | main_vga/vertical/clear                         |                4 |             10 |         2.50 |
+|  system_clk_BUFG                       | main_processor/cycles_counter[2]              | main_processor/BFU6/cycles_counter_reg[2]_inv_0 |               10 |             10 |         1.00 |
+|  vga_clk_BUFG                          |                                               | main_vga/horizontal/counter[9]_i_1__0_n_0       |                4 |             10 |         2.50 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[1][17]_i_1_n_0             |                                                 |               12 |             18 |         1.50 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[0][17]_i_1_n_0             |                                                 |                6 |             18 |         3.00 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[6][17]_i_1_n_0             |                                                 |               13 |             18 |         1.38 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[8][17]_i_1_n_0             |                                                 |                7 |             18 |         2.57 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[9][17]_i_1_n_0             |                                                 |               13 |             18 |         1.38 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[11][17]_i_1_n_0            |                                                 |               11 |             18 |         1.64 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[5][17]_i_1_n_0             |                                                 |               12 |             18 |         1.50 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[3][17]_i_1_n_0             |                                                 |               15 |             18 |         1.20 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[4][17]_i_1_n_0             |                                                 |               10 |             18 |         1.80 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[12][17]_i_1_n_0            |                                                 |               12 |             18 |         1.50 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[15][17]_i_1_n_0            |                                                 |                8 |             18 |         2.25 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[2][17]_i_1_n_0             |                                                 |               12 |             18 |         1.50 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[10][17]_i_1_n_0            |                                                 |               11 |             18 |         1.64 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[14][17]_i_1_n_0            |                                                 |               12 |             18 |         1.50 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[7][17]_i_1_n_0             |                                                 |               10 |             18 |         1.80 |
+|  mic_clk_OBUF_BUFG                     | mic_reader/samples[13][17]_i_1_n_0            |                                                 |               13 |             18 |         1.38 |
+|  mic_clk_OBUF_BUFG                     |                                               | reset_IBUF                                      |                4 |             24 |         6.00 |
+|  system_clk_BUFG                       | main_processor/cycles_counter[2]              | main_processor/W5[21]_i_1_n_0                   |               25 |             27 |         1.08 |
+|  system_clk_BUFG                       | main_processor/cycles_counter[2]              | main_processor/BFU7/new_block_reg               |              194 |            362 |         1.87 |
+|  vga_clk_BUFG                          | main_processor/E[0]                           |                                                 |              159 |            384 |         2.42 |
+|  system_clk_BUFG                       | main_processor/BFU2/cycles_counter_reg[2]_inv | main_processor/BFU2/reset                       |              186 |            402 |         2.16 |
++----------------------------------------+-----------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
 
 
