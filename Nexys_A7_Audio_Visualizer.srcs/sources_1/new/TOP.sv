@@ -1,9 +1,8 @@
 module TOP(
     input clk,          // Входной тактовый сигнал
     input reset,        // Сигнал сброса
-    input DOUT,         // Входной сигнал данных
-    output LRCLK,       // Выходной сигнал для левого/правого канала
-    //output BCLK,        // Выходной сигнал битового такта
+    input pdm_data,         // Входной сигнал данных с микрофона
+    output logic pdm_lrsel,       // Set to '0', therefore data is read on the positive edge
     output vsync,       // Выходной сигнал вертикальной синхронизации
     output hsync,       // Выходной сигнал горизонтальной синхронизации
     output [3:0] r,     // Выходной сигнал для красного цвета (4 бита)
@@ -12,6 +11,7 @@ module TOP(
     output mic_clk
 );
 
+    initial assign pdm_lrsel = 1'b0;
     // Внутренние сигналы
     wire new_t, done, system_clk, vga_clk;
     wire [17:0] t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15;
@@ -35,7 +35,7 @@ module TOP(
     );    
 
     // Инстанцирование модуля mic_translator
-   mic_translator main_translator(
+  /* mic_translator main_translator(
         .clk(system_clk),
         .reset(reset),
         .DOUT(DOUT),
@@ -46,6 +46,18 @@ module TOP(
         .t4(t4), .t5(t5), .t6(t6), .t7(t7),
         .t8(t8), .t9(t9), .t10(t10), .t11(t11),
         .t12(t12), .t13(t13), .t14(t14), .t15(t15)
+    );*/
+    
+    mic_pdm_reader_array mic_reader(
+        .clk(),
+        .reset(),
+        .pdm_data(pdm_data),
+        //.samples()
+        .t0(t0), .t1(t1), .t2(t2), .t3(t3),
+        .t4(t4), .t5(t5), .t6(t6), .t7(t7),
+        .t8(t8), .t9(t9), .t10(t10), .t11(t11),
+        .t12(t12), .t13(t13), .t14(t14), .t15(t15),
+        .new_block(new_t)
     );
 
     // Инстанцирование модуля FFT_Processor

@@ -11,9 +11,9 @@ echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executi
 exit
 
 if [ -z "$PATH" ]; then
-  PATH=C:/Programs/Xilinx_Windows_Unpacked_2022_2/Vitis/2022.2/bin;C:/Programs/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/ids_lite/ISE/bin/nt64;C:/Programs/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/ids_lite/ISE/lib/nt64:C:/Programs/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/bin
+  PATH=D:/Xilinx/Vivado/2022.2/ids_lite/ISE/bin/nt64;D:/Xilinx/Vivado/2022.2/ids_lite/ISE/lib/nt64:D:/Xilinx/Vivado/2022.2/bin
 else
-  PATH=C:/Programs/Xilinx_Windows_Unpacked_2022_2/Vitis/2022.2/bin;C:/Programs/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/ids_lite/ISE/bin/nt64;C:/Programs/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/ids_lite/ISE/lib/nt64:C:/Programs/Xilinx_Windows_Unpacked_2022_2/Vivado/2022.2/bin:$PATH
+  PATH=D:/Xilinx/Vivado/2022.2/ids_lite/ISE/bin/nt64;D:/Xilinx/Vivado/2022.2/ids_lite/ISE/lib/nt64:D:/Xilinx/Vivado/2022.2/bin:$PATH
 fi
 export PATH
 
@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='M:/2010/IVBO-04-21/Solomakhin/project_1/project_1.runs/synth_1'
+HD_PWD='C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log FFT.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FFT.tcl
+EAStep vivado -log TOP.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
