@@ -5,7 +5,7 @@ module hsync(
     output reg hsync_out,
     output reg blank_out,
     output reg newline_out,
-    output reg [10:0] pixel_count
+    output [10:0] pixel_count
 );
 
     parameter TOTAL_COUNTER = 800;
@@ -59,7 +59,7 @@ module vsync(
     input newline_in,
     output reg vsync_out,
     output reg blank_out,
-    output reg [10:0] pixel_count
+    output [10:0] pixel_count
 );
 
     parameter TOTAL_COUNTER = 525;
