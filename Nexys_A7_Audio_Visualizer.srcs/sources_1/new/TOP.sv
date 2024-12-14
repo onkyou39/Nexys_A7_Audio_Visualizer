@@ -49,8 +49,8 @@ module TOP(
     );*/
     
     mic_pdm_reader_array mic_reader(
-        .clk(),
-        .reset(),
+        .clk(mic_clk),
+        .reset(reset),
         .pdm_data(pdm_data),
         //.samples()
         .t0(t0), .t1(t1), .t2(t2), .t3(t3),
