@@ -11,7 +11,7 @@ module TOP(
     output mic_clk
 );
 
-    initial assign pdm_lrsel = 1'b0;
+    assign pdm_lrsel = 1'b0;
     // Внутренние сигналы
     wire new_t, done, system_clk, vga_clk;
     wire [17:0] t0, t1, t2, t3, t4, t5, t6, t7, t8, t9, t10, t11, t12, t13, t14, t15;

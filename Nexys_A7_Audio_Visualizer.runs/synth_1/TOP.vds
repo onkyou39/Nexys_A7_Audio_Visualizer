@@ -2,8 +2,8 @@
 # Vivado v2022.2 (64-bit)
 # SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
 # IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-# Start of session at: Sat Dec 14 21:40:44 2024
-# Process ID: 10716
+# Start of session at: Sat Dec 14 22:29:02 2024
+# Process ID: 11524
 # Current directory: C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.runs/synth_1
 # Command line: vivado.exe -log TOP.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source TOP.tcl
 # Log file: C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.runs/synth_1/TOP.vds
@@ -11,7 +11,7 @@
 # Running On: DESKTOP-DGPTGC1, OS: Windows, CPU Frequency: 3094 MHz, CPU Physical cores: 2, Host memory: 7998 MB
 #-----------------------------------------------------------
 source TOP.tcl -notrace
-create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 394.055 ; gain = 64.078
+create_project: Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 394.973 ; gain = 68.438
 Command: read_checkpoint -auto_incremental -incremental C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/utils_1/imports/synth_1/FFT.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/utils_1/imports/synth_1/FFT.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -24,13 +24,12 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2288
+INFO: [Synth 8-7075] Helper process launched with PID 15880
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1222.312 ; gain = 407.832
+Starting RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1222.770 ; gain = 408.121
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'TOP' [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/TOP.sv:1]
-WARNING: [Synth 8-6896] procedural assign is inside initial block, initial block items will be ignored [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/TOP.sv:14]
 INFO: [Synth 8-6157] synthesizing module 'clkdiv' [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/clkdiv.sv:3]
 	Parameter counter_threshold bound to: 1 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'clkdiv' (0#1) [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/clkdiv.sv:3]
@@ -38,7 +37,7 @@ INFO: [Synth 8-6157] synthesizing module 'clkdiv__parameterized0' [C:/Users/Prov
 	Parameter counter_threshold bound to: 398 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'clkdiv__parameterized0' (0#1) [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/clkdiv.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'clkdiv__parameterized1' [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/clkdiv.sv:3]
-	Parameter counter_threshold bound to: 34 - type: integer 
+	Parameter counter_threshold bound to: 16 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'clkdiv__parameterized1' (0#1) [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/clkdiv.sv:3]
 INFO: [Synth 8-6157] synthesizing module 'mic_pdm_reader_array' [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/mic_pdm_to_pcm.sv:1]
 INFO: [Synth 8-6155] done synthesizing module 'mic_pdm_reader_array' (0#1) [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/mic_pdm_to_pcm.sv:1]
@@ -72,22 +71,21 @@ WARNING: [Synth 8-7137] Register samples_reg[13] in module mic_pdm_reader_array 
 WARNING: [Synth 8-7137] Register samples_reg[14] in module mic_pdm_reader_array has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/mic_pdm_to_pcm.sv:31]
 WARNING: [Synth 8-7137] Register samples_reg[15] in module mic_pdm_reader_array has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/mic_pdm_to_pcm.sv:31]
 WARNING: [Synth 8-6014] Unused sequential element b_reg_reg was removed.  [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/VGA_generator.sv:147]
-WARNING: [Synth 8-3848] Net pdm_lrsel in module/entity TOP does not have driver. [C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.srcs/sources_1/new/TOP.sv:5]
+WARNING: [Synth 8-3917] design TOP has port pdm_lrsel driven by constant 0
 WARNING: [Synth 8-7129] Port done in module data is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pdm_lrsel in module TOP is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1330.859 ; gain = 516.379
+Finished RTL Elaboration : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1330.785 ; gain = 516.137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1330.859 ; gain = 516.379
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1330.785 ; gain = 516.137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1330.859 ; gain = 516.379
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 1330.785 ; gain = 516.137
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.190 . Memory (MB): peak = 1330.859 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.199 . Memory (MB): peak = 1330.785 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -98,32 +96,32 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/TOP_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1402.570 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1440.625 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1402.570 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 1440.625 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Xilinx/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 1402.570 ; gain = 588.090
+Finished Constraint Validation : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1440.625 ; gain = 625.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 1402.570 ; gain = 588.090
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1440.625 ; gain = 625.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:39 ; elapsed = 00:00:43 . Memory (MB): peak = 1402.570 ; gain = 588.090
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:00:42 . Memory (MB): peak = 1440.625 ; gain = 625.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:00:46 . Memory (MB): peak = 1402.570 ; gain = 588.090
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:42 ; elapsed = 00:00:45 . Memory (MB): peak = 1440.625 ; gain = 625.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -1228,14 +1226,14 @@ DSP Report: operator scaled_f61 is absorbed into DSP scaled_f61.
 DSP Report: Generating DSP scaled_f61, operation Mode is: PCIN+A*(B:0x1fe20).
 DSP Report: operator scaled_f61 is absorbed into DSP scaled_f61.
 DSP Report: operator scaled_f61 is absorbed into DSP scaled_f61.
+WARNING: [Synth 8-3917] design TOP has port pdm_lrsel driven by constant 0
 WARNING: [Synth 8-7129] Port done in module data is either unconnected or has no load
-WARNING: [Synth 8-7129] Port pdm_lrsel in module TOP is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:39 ; elapsed = 00:01:45 . Memory (MB): peak = 1402.570 ; gain = 588.090
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:39 ; elapsed = 00:01:49 . Memory (MB): peak = 1440.625 ; gain = 625.977
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-3323] Resources of type DSP have been overutilized. Used = 348, Available = 240. Use report_utilization command for details.
-DSP Debug: swapped A/B pins for adder 00000193EBEE0A10
-DSP Debug: swapped A/B pins for adder 00000193EC830570
+DSP Debug: swapped A/B pins for adder 00000152FC5A59A0
+DSP Debug: swapped A/B pins for adder 00000152E07AAEF0
 DSP Report: Generating DSP A_imag_B_real, operation Mode is (post resource management): A*B.
 DSP Report: operator A_imag_B_real is absorbed into DSP A_imag_B_real.
 DSP Report: operator A_imag_B_real is absorbed into DSP A_imag_B_real.
@@ -2154,19 +2152,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:10 ; elapsed = 00:02:17 . Memory (MB): peak = 1402.570 ; gain = 588.090
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:02:15 ; elapsed = 00:02:33 . Memory (MB): peak = 1440.625 ; gain = 625.977
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:19 ; elapsed = 00:02:26 . Memory (MB): peak = 1460.848 ; gain = 646.367
+Finished Timing Optimization : Time (s): cpu = 00:02:25 ; elapsed = 00:02:45 . Memory (MB): peak = 1458.402 ; gain = 643.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:41 ; elapsed = 00:02:50 . Memory (MB): peak = 1676.035 ; gain = 861.555
+Finished Technology Mapping : Time (s): cpu = 00:02:46 ; elapsed = 00:03:11 . Memory (MB): peak = 1687.340 ; gain = 872.691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -2184,37 +2182,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:03:07 ; elapsed = 00:03:17 . Memory (MB): peak = 1676.035 ; gain = 861.555
+Finished IO Insertion : Time (s): cpu = 00:03:12 ; elapsed = 00:03:39 . Memory (MB): peak = 1693.926 ; gain = 879.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:03:07 ; elapsed = 00:03:17 . Memory (MB): peak = 1676.035 ; gain = 861.555
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:12 ; elapsed = 00:03:39 . Memory (MB): peak = 1693.926 ; gain = 879.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:13 ; elapsed = 00:03:23 . Memory (MB): peak = 1676.035 ; gain = 861.555
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:19 ; elapsed = 00:03:45 . Memory (MB): peak = 1693.926 ; gain = 879.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:03:13 ; elapsed = 00:03:24 . Memory (MB): peak = 1676.035 ; gain = 861.555
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:19 ; elapsed = 00:03:45 . Memory (MB): peak = 1693.926 ; gain = 879.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:03:14 ; elapsed = 00:03:25 . Memory (MB): peak = 1676.035 ; gain = 861.555
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:20 ; elapsed = 00:03:46 . Memory (MB): peak = 1693.926 ; gain = 879.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:03:15 ; elapsed = 00:03:25 . Memory (MB): peak = 1676.035 ; gain = 861.555
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:20 ; elapsed = 00:03:47 . Memory (MB): peak = 1693.926 ; gain = 879.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -2425,39 +2423,38 @@ Report Cell Usage:
 |2     |CARRY4  |  2434|
 |3     |DSP48E1 |   184|
 |8     |LUT1    |   178|
-|9     |LUT2    |  5071|
+|9     |LUT2    |  5072|
 |10    |LUT3    |  2040|
 |11    |LUT4    |   951|
-|12    |LUT5    |  1228|
-|13    |LUT6    |  1547|
+|12    |LUT5    |  1227|
+|13    |LUT6    |  1546|
 |14    |FDCE    |    29|
-|15    |FDRE    |  1426|
+|15    |FDRE    |  1425|
 |16    |FDSE    |   103|
 |17    |IBUF    |     3|
-|18    |OBUF    |    15|
-|19    |OBUFT   |     1|
+|18    |OBUF    |    16|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:03:15 ; elapsed = 00:03:25 . Memory (MB): peak = 1676.035 ; gain = 861.555
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:20 ; elapsed = 00:03:47 . Memory (MB): peak = 1693.926 ; gain = 879.277
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 4 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:50 ; elapsed = 00:03:18 . Memory (MB): peak = 1676.035 ; gain = 789.844
-Synthesis Optimization Complete : Time (s): cpu = 00:03:15 ; elapsed = 00:03:25 . Memory (MB): peak = 1676.035 ; gain = 861.555
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:54 ; elapsed = 00:03:39 . Memory (MB): peak = 1693.926 ; gain = 769.438
+Synthesis Optimization Complete : Time (s): cpu = 00:03:20 ; elapsed = 00:03:47 . Memory (MB): peak = 1693.926 ; gain = 879.277
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.750 . Memory (MB): peak = 1676.035 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.529 . Memory (MB): peak = 1693.926 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 2618 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1676.035 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1693.926 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 788c1ce2
+Synth Design complete, checksum: ffc4c8aa
 INFO: [Common 17-83] Releasing license: Synthesis
-45 Infos, 25 Warnings, 0 Critical Warnings and 0 Errors encountered.
+45 Infos, 23 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:35 ; elapsed = 00:03:50 . Memory (MB): peak = 1676.035 ; gain = 1257.098
+synth_design: Time (s): cpu = 00:03:39 ; elapsed = 00:04:12 . Memory (MB): peak = 1693.926 ; gain = 1274.102
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Provisional/Desktop/ise_projects/Equalizer/Nexys_A7_Audio_Visualizer/Nexys_A7_Audio_Visualizer.runs/synth_1/TOP.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file TOP_utilization_synth.rpt -pb TOP_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Dec 14 21:44:58 2024...
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 14 22:33:43 2024...
